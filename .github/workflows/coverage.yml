@@ -1,0 +1,31 @@
+name: Code Coverage
+
+on:
+  pull_request:
+    branches: [main] # Set the branch where you want to run coverage
+
+jobs:
+  coverage:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.11
+
+      - name: Install Poetry
+        run: |
+          curl -sSL https://install.python-poetry.org | python3 -
+          echo "$HOME/.poetry/bin" >> $GITHUB_PATH
+
+      - name: Install project dependencies
+        run: poetry install
+
+      - name: Run tests and coverage
+        run: |
+          coverage run -m pytest
+          coverage report -m
