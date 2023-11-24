@@ -8,6 +8,17 @@ jobs:
   coverage:
     runs-on: ubuntu-latest
 
+    services:
+      postgres:
+        image: postgres:latest
+        env:
+          POSTGRES_DB: flair
+          POSTGRES_USER: postgres
+          POSTGRES_PASSWORD: postgres
+        ports:
+          - 5432:5432
+        options: --health-cmd pg_isready --health-interval 10s --health-timeout 5s --health-retries 5
+
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
@@ -24,6 +35,40 @@ jobs:
 
       - name: Install project dependencies
         run: poetry install
+
+      - name: Setup PostgreSQL and flair table
+        env:
+          DATABASE_URL: postgresql://postgres:postgres@localhost:5432/flair
+        run: |
+          CREATE TABLE flair (
+            jobid TIMESTAMP NOT NULL,
+            testtype VARCHAR(255) NOT NULL,
+            run INT NOT NULL,
+            fcstinit DATE NOT NULL,
+            evalstep INT NOT NULL,
+            ds DATE NOT NULL,
+            yoriginal FLOAT NOT NULL,
+            y FLOAT NOT NULL,
+            yhat FLOAT,
+            yhatlower FLOAT,
+            yhatupper FLOAT,
+            trend FLOAT,
+            trendlower FLOAT,
+            trendupper FLOAT,
+            additiveterms FLOAT,
+            additivetermslower FLOAT,
+            additivetermsupper FLOAT,
+            multiplicativeterms FLOAT,
+            multiplicativetermslower FLOAT,
+            multiplicativetermsupper FLOAT,
+            yearly FLOAT,
+            yearlylower FLOAT,
+            yearlyupper FLOAT,
+            simdate DATE,
+            sim INT,
+            error FLOAT,
+            mape FLOAT
+          );
 
       - name: Run tests and coverage
         run: |
