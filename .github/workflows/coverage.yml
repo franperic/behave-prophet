@@ -43,6 +43,7 @@ jobs:
 
       - name: Create Table in PostgreSQL
         env:
+          PG_PASSWORD: postgres
           DATABASE_URL: postgresql://postgres:postgres@localhost:5432/flair
         run: |
           psql -U postgres -h localhost -d flair -c "CREATE TABLE IF NOT EXISTS flair (
