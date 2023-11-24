@@ -23,10 +23,9 @@ jobs:
           echo "$HOME/.poetry/bin" >> $GITHUB_PATH
 
       - name: Install project dependencies
-        run: poetry install
-
-      - name: Install coverage
-        run: poetry add coverage --dev
+        run: |
+          poetry install
+          poetry shell
 
       - name: Run tests and coverage
         run: |
