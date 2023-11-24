@@ -25,6 +25,9 @@ jobs:
       - name: Install project dependencies
         run: poetry install
 
+      - name: Install coverage
+        run: poetry add coverage --dev
+
       - name: Run tests and coverage
         run: |
           coverage run -m pytest
