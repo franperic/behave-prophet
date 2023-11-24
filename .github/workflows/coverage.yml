@@ -36,9 +36,6 @@ jobs:
       - name: Install project dependencies
         run: poetry install
 
-      - name: Wait for PostgreSQL to be ready
-        run: dockerize -wait tcp://localhost:5432 -timeout 1m
-
       - name: Set up PostgreSQL client
         run: |
           sudo apt-get update
