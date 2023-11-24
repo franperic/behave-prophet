@@ -199,8 +199,7 @@ class ProphetEvaluator:
             cols=1,
             subplot_titles=subtitles,
             shared_xaxes=True,
-            vertical_spacing=0.1,
-            row_heights=[0.8, 0.8, 0.8, 0.8],
+            vertical_spacing=0.008,
         )
         # Intervention overview
         overview = go.Scatter(
@@ -353,8 +352,10 @@ class ProphetEvaluator:
             labels={"x": "Adaption Time"},
         )
 
+        adaption_hist.update_xaxes(range=[0, 12])
+
         coverage_box = px.box(
-            coverage, title="Share of Evaluaiton Steps Below Benchmark Per Run"
+            coverage, title="Share of Evaluation Steps Below Benchmark Per Run"
         )
         coverage_box.update_layout(xaxis_title="", yaxis_title="Share")
 
@@ -410,7 +411,6 @@ class ProphetEvaluator:
             subplot_titles=[f"Evaluation step {i}" for i in range(24)],
             shared_xaxes=True,
             vertical_spacing=0.008,
-            # row_heights=[0.8, 0.8, 0.8, 0.8],
         )
 
         # Steps
