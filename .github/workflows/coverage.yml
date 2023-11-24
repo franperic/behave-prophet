@@ -36,11 +36,19 @@ jobs:
       - name: Install project dependencies
         run: poetry install
 
-      - name: Setup PostgreSQL and flair table
+      - name: Wait for PostgreSQL to be ready
+        run: dockerize -wait tcp://localhost:5432 -timeout 1m
+
+      - name: Set up PostgreSQL client
+        run: |
+          sudo apt-get update
+          sudo apt-get install postgresql-client -y
+
+      - name: Create Table in PostgreSQL
         env:
           DATABASE_URL: postgresql://postgres:postgres@localhost:5432/flair
         run: |
-          CREATE TABLE flair (
+          psql -U postgres -h localhost -d flair -c "CREATE TABLE IF NOT EXISTS flair (
             jobid TIMESTAMP NOT NULL,
             testtype VARCHAR(255) NOT NULL,
             run INT NOT NULL,
@@ -68,7 +76,7 @@ jobs:
             sim INT,
             error FLOAT,
             mape FLOAT
-          );
+            );"
 
       - name: Run tests and coverage
         run: |
