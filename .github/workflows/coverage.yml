@@ -77,9 +77,10 @@ jobs:
             );"
 
       - name: Run tests and coverage
-        run: |
-          python -m pytest --cov .
+        run: poetry run coverage run -m pytest
       - name: Upload coverage reports to Codecov
         uses: codecov/codecov-action@v3
+        with:
+          verbose: true
         env:
           CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
