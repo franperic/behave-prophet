@@ -21,6 +21,7 @@ tqdm = "^4.66.1"
 pyarrow = "^14.0.1"
 cmdstanpy = "^1.2.0"
 pytest = "^7.4.3"
+coverage = "^7.3.2"
 
 
 [build-system]
