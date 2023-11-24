@@ -1,0 +1,12 @@
+*.zip
+*.csv
+*.parquet
+*.log
+.DS_Store
+*.whl
+*.tar.gz
+
+*.lock
+*.pyc
+__init__.py
+*.ipynb
