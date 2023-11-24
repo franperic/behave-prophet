@@ -78,8 +78,7 @@ jobs:
 
       - name: Run tests and coverage
         run: |
-          poetry run coverage run -m pytest
-          poetry run coverage report -m
+          pytest --cov .
       - name: Upload coverage reports to Codecov
         uses: codecov/codecov-action@v3
         env:
