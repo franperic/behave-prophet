@@ -14,7 +14,8 @@ from flair.prophet_evaluator import ProphetEvaluator
 import pandas as pd
 
 
-def test_valid_inputs():
+@pytest.fixture(scope="module")
+def get_prophet():
     prophet = ProphetEvaluator(
         df=pd.DataFrame(
             {
@@ -26,4 +27,13 @@ def test_valid_inputs():
         date="date",
         testtype="structural",
     )
+    return prophet
+
+
+def test_all_methods(get_prophet):
+    prophet = get_prophet
     prophet.evaluate()
+    prophet.plot_summary()
+    prophet.plot_interventions()
+    prophet.plot_detail()
+    prophet.plot_mapes()
