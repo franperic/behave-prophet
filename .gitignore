@@ -11,5 +11,3 @@
 __init__.py
 *.ipynb
 *.coverage
-
-docs/*
