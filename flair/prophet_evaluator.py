@@ -15,6 +15,8 @@ import cmdstanpy
 
 
 def flair_logger():
+    """Set up the package logger"""
+
     logger = logging.getLogger("flair")
     logger.setLevel(logging.INFO)
 
@@ -26,7 +28,7 @@ def flair_logger():
     return logger
 
 
-# Setup your package logger
+# Seting up the package logger
 flair_logging = flair_logger()
 
 
@@ -35,6 +37,44 @@ con = create_engine("postgresql://postgres:postgres@localhost:5432/flair", echo=
 
 @dataclass
 class ProphetEvaluator:
+    """
+    A class to evaluate the behavior of a forecasting model in a simulated environment.
+
+    ...
+
+    Parameters
+    ----------
+    df : pd.DataFrame
+        The dataframe containing the timeseries.
+    target : str
+        The name of the target column.
+    date : str
+        The name of the date column.
+    testtype : str
+        The type of the test. Currently only "structural" is supported.
+    sim_runs : int
+        The number of simulations to run. Default is 10.
+    sim_value : float
+        The value to multiply the target with in the simulation. Default is 1.2.
+    outlier_injection : float
+        The value to multiply the target with in the simulation. Default is 1.8.
+
+    Attributes
+    ----------
+    Methods
+    -------
+    evaluate()
+        Perform the simulation and forecast evaluation.
+    plot_interventions()
+        Visualize the randomly selected intervention points and the simulated timeseries.
+    plot_summary()
+        Provide a global report on the simulation results.
+    plot_detail()
+        Visualize the simulated timeseries & forecasts for each evaluation step for a single run.
+    plot_mapes()
+        Visualize the mapes for each evaluation step for a single run.
+    """
+
     df: pd.DataFrame
     target: str
     date: str
@@ -175,6 +215,13 @@ class ProphetEvaluator:
         return data
 
     def evaluate(self):
+        """
+        Perform the simulation and forecast evaluation.
+
+        Returns:
+            None
+        """
+
         self.__prep_data()
         self.__prep_training_data()
         self.__get_predictions()
@@ -182,8 +229,12 @@ class ProphetEvaluator:
 
     def plot_interventions(self) -> go.Figure:
         """
-        Visualize the mapes for current jobid.
+        Visualize the randomly selected intervention points and the simulated timeseries.
+
+        Returns:
+            fig: go.Figure
         """
+
         df = self.__get_data()
         df.ds = pd.to_datetime(df.ds)
         df.sort_values(by=["ds"], inplace=True)
@@ -376,6 +427,13 @@ class ProphetEvaluator:
         return (summary_text, summary_table, adaption_hist, coverage_box, mape_box)
 
     def plot_summary(self):
+        """
+        Provide a global report on the simulation results.
+
+        Returns:
+            None
+        """
+
         (
             summary_text,
             summary_table,
@@ -392,10 +450,11 @@ class ProphetEvaluator:
 
     def plot_detail(self, run: int = 0) -> go.Figure:
         """
-        Plot each eval step for a given run.
+        Visualize the simulated timeseries & forecasts for each evaluation step for a single run.
 
         Args:
             run: int
+                The run to visualize. Default is 0.
 
         Returns:
             fig: go.Figure
@@ -482,8 +541,16 @@ class ProphetEvaluator:
 
     def plot_mapes(self, run: int = 0) -> go.Figure:
         """
-        Plot the mapes for a given run.
+        Visualize the mapes for each evaluation step for a single run.
+
+        Args:
+            run: int
+                The run to visualize. Default is 0.
+
+        Returns:
+            fig: go.Figure
         """
+
         df = self.__get_data()
         run_df = df.loc[df.run == run]
 
