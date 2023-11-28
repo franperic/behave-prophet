@@ -24,6 +24,7 @@ pytest = "^7.4.3"
 coverage = "^7.3.2"
 sphinx = "^7.2.6"
 myst-parser = "^2.0.0"
+sphinx-rtd-theme = "^2.0.0"
 
 
 [build-system]
