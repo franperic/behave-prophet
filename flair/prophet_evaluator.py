@@ -369,15 +369,37 @@ class ProphetEvaluator:
             for run, time in nonadaption.items():
                 adaption_list[run] = time
 
+        def rename_cols(df):
+            df.columns = [f"{col[0]}_{col[1]}" for col in df.columns]
+            return df
+
+        global_summary = (
+            adaption_df.groupby("run")[["mape", "benchmark"]]
+            .agg(["mean", "std"])
+            .assign(adaption=adaption_list - 12)
+            .reset_index()
+            .pipe(rename_cols)
+            .rename(
+                columns={
+                    "run_": "run",
+                    "adaption_": "adaption_time",
+                    "mape_mean": "sim_mape",
+                    "mape_std": "sim_mape_std",
+                    "benchmark_mean": "benchmark_mape",
+                }
+            )
+            .drop(columns=["benchmark_std"])
+        )
+
         # remove 12 pre-simulation steps for adaption time
-        return adaption_list - 12, mapes_df, coverage
+        return adaption_list - 12, mapes_df, coverage, global_summary
 
     def __get_summary(self) -> (str, go.Figure):
         """
         Provide average adoption time for all runs.
         """
         df = self.__get_data()
-        adaption_list, mapes_df, coverage = self.__get_adaption_time(df)
+        adaption_list, mapes_df, coverage, global_summary = self.__get_adaption_time(df)
 
         summary_text = (
             f"The median time to adapt to a shock is {np.median(adaption_list)} months."
@@ -424,19 +446,29 @@ class ProphetEvaluator:
             legend_title="Simulation",
         )
 
-        return (summary_text, summary_table, adaption_hist, coverage_box, mape_box)
+        return (
+            summary_text,
+            summary_table,
+            global_summary,
+            adaption_hist,
+            coverage_box,
+            mape_box,
+        )
 
-    def plot_summary(self):
+    def plot_summary(self) -> (go.Figure, go.Figure, go.Figure):
         """
         Provide a global report on the simulation results.
 
         Returns:
-            None
+            adaption_hist: go.Figure
+            coverage_box: go.Figure
+            mape_box: go.Figure
         """
 
         (
             summary_text,
             summary_table,
+            global_summary,
             adaption_hist,
             coverage_box,
             mape_box,
@@ -444,9 +476,13 @@ class ProphetEvaluator:
 
         print(summary_text)
         print(summary_table)
-        adaption_hist.show()
-        coverage_box.show()
-        mape_box.show()
+        print(global_summary)
+
+        return (
+            adaption_hist,
+            coverage_box,
+            mape_box,
+        )
 
     def plot_detail(self, run: int = 0) -> go.Figure:
         """
