@@ -11,3 +11,7 @@
 __init__.py
 *.ipynb
 *.coverage
+
+!examples/*.ipynb
+!examples/data/*.parquet
+!examples/data/*.csv
