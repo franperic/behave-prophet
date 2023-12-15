@@ -1,13 +1,3 @@
-import os
-import sys
-
-# Get the current directory of the script
-current_dir = os.path.dirname(os.path.abspath(__file__))
-
-# Append the parent directory to Python path
-parent_dir = os.path.dirname(current_dir)
-sys.path.append(parent_dir)
-
 import numpy as np
 import pytest
 from behave_prophet.prophet_evaluator import ProphetEvaluator
