@@ -12,7 +12,7 @@ jobs:
       postgres:
         image: postgres:latest
         env:
-          POSTGRES_DB: flair
+          POSTGRES_DB: behave
           POSTGRES_USER: postgres
           POSTGRES_PASSWORD: postgres
         ports:
@@ -44,9 +44,9 @@ jobs:
       - name: Create Table in PostgreSQL
         env:
           PGPASSWORD: postgres
-          DATABASE_URL: postgresql://postgres:postgres@localhost:5432/flair
+          DATABASE_URL: postgresql://postgres:postgres@localhost:5432/behave
         run: |
-          psql -U postgres -h localhost -d flair -c "CREATE TABLE IF NOT EXISTS flair (
+          psql -U postgres -h localhost -d flair -c "CREATE TABLE IF NOT EXISTS behave (
             jobid TIMESTAMP NOT NULL,
             testtype VARCHAR(255) NOT NULL,
             run INT NOT NULL,

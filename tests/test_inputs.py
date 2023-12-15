@@ -10,7 +10,7 @@ sys.path.append(parent_dir)
 
 import numpy as np
 import pytest
-from flair.prophet_evaluator import ProphetEvaluator
+from behave.prophet_evaluator import ProphetEvaluator
 import pandas as pd
 
 
