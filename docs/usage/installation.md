@@ -1,6 +1,6 @@
 # Installation
 
-To use `flair`, you can install it via `pip`. It is recommended to create a virtual environment before installing the package.
+To use `behave-prophet`, you can install it via `pip`. It is recommended to create a virtual environment before installing the package.
 
 ## Prerequisites
 
@@ -9,8 +9,8 @@ To use `flair`, you can install it via `pip`. It is recommended to create a virt
 
 ## Installation
 
-You can install `flair` using `pip`:
+You can install `behave-prophet` using `pip`:
 
 ```bash
-pip install flair
+pip install behave-prophet
 ```

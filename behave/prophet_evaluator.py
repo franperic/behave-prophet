@@ -8,16 +8,16 @@ import plotly.graph_objects as go
 import plotly.express as px
 from plotly.subplots import make_subplots
 
-from flair.colors import colors
+from behave.colors import colors
 
 import logging
 import cmdstanpy
 
 
-def flair_logger():
+def behave_logger():
     """Set up the package logger"""
 
-    logger = logging.getLogger("flair")
+    logger = logging.getLogger("behave")
     logger.setLevel(logging.INFO)
 
     # Create a handler to suppress cmdstanpy INFO messages
@@ -29,10 +29,10 @@ def flair_logger():
 
 
 # Seting up the package logger
-flair_logging = flair_logger()
+behave_logging = behave_logger()
 
 
-con = create_engine("postgresql://postgres:postgres@localhost:5432/flair", echo=False)
+con = create_engine("postgresql://postgres:postgres@localhost:5432/behave", echo=False)
 
 
 @dataclass
@@ -156,7 +156,7 @@ class ProphetEvaluator:
             testtype=self.testtype,
             run=run,
         )
-        predictions.to_sql("flair", con, if_exists="append", index=False)
+        predictions.to_sql("behave", con, if_exists="append", index=False)
 
     def __get_predictions(self) -> pd.DataFrame:
         train_runs = self.train_runs
@@ -199,7 +199,7 @@ class ProphetEvaluator:
 
     def __get_errors(self) -> pd.DataFrame:
         calculate_mapes_sql = text(
-            f"UPDATE flair SET error = yhat - y WHERE jobid='{self.jobid}';"
+            f"UPDATE behave SET error = yhat - y WHERE jobid='{self.jobid}';"
         )
         with con.connect() as connection:
             connection.execute(calculate_mapes_sql)
@@ -209,7 +209,7 @@ class ProphetEvaluator:
         """
         Fetch data from the database for the current jobid.
         """
-        get_data_sql = text(f"SELECT * FROM flair WHERE jobid='{self.jobid}';")
+        get_data_sql = text(f"SELECT * FROM behave WHERE jobid='{self.jobid}';")
         with con.connect() as connection:
             data = pd.read_sql(get_data_sql, connection)
         return data

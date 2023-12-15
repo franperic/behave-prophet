@@ -47,32 +47,7 @@
 <li><a class="reference internal" href="#">Welcome to flair’s documentation!</a></li>
 <li><a class="reference internal" href="#installation">Installation</a></li>
 <li><a class="reference internal" href="#quickstart-guide">Quickstart Guide</a></li>
-<li><a class="reference internal" href="#module-flair.prophet_evaluator">flair</a><ul>
-<li><a class="reference internal" href="#flair.prophet_evaluator.ProphetEvaluator"><code class="docutils literal notranslate"><span class="pre">ProphetEvaluator</span></code></a><ul>
-<li><a class="reference internal" href="#flair.prophet_evaluator.ProphetEvaluator.evaluate"><code class="docutils literal notranslate"><span class="pre">ProphetEvaluator.evaluate()</span></code></a></li>
-<li><a class="reference internal" href="#flair.prophet_evaluator.ProphetEvaluator.plot_interventions"><code class="docutils literal notranslate"><span class="pre">ProphetEvaluator.plot_interventions()</span></code></a></li>
-<li><a class="reference internal" href="#flair.prophet_evaluator.ProphetEvaluator.plot_summary"><code class="docutils literal notranslate"><span class="pre">ProphetEvaluator.plot_summary()</span></code></a></li>
-<li><a class="reference internal" href="#flair.prophet_evaluator.ProphetEvaluator.plot_detail"><code class="docutils literal notranslate"><span class="pre">ProphetEvaluator.plot_detail()</span></code></a></li>
-<li><a class="reference internal" href="#flair.prophet_evaluator.ProphetEvaluator.plot_mapes"><code class="docutils literal notranslate"><span class="pre">ProphetEvaluator.plot_mapes()</span></code></a></li>
-<li><a class="reference internal" href="#flair.prophet_evaluator.ProphetEvaluator.date"><code class="docutils literal notranslate"><span class="pre">ProphetEvaluator.date</span></code></a></li>
-<li><a class="reference internal" href="#flair.prophet_evaluator.ProphetEvaluator.df"><code class="docutils literal notranslate"><span class="pre">ProphetEvaluator.df</span></code></a></li>
-<li><a class="reference internal" href="#id0"><code class="docutils literal notranslate"><span class="pre">ProphetEvaluator.evaluate()</span></code></a></li>
-<li><a class="reference internal" href="#flair.prophet_evaluator.ProphetEvaluator.jobid"><code class="docutils literal notranslate"><span class="pre">ProphetEvaluator.jobid</span></code></a></li>
-<li><a class="reference internal" href="#flair.prophet_evaluator.ProphetEvaluator.outlier_injection"><code class="docutils literal notranslate"><span class="pre">ProphetEvaluator.outlier_injection</span></code></a></li>
-<li><a class="reference internal" href="#id1"><code class="docutils literal notranslate"><span class="pre">ProphetEvaluator.plot_detail()</span></code></a></li>
-<li><a class="reference internal" href="#id2"><code class="docutils literal notranslate"><span class="pre">ProphetEvaluator.plot_interventions()</span></code></a></li>
-<li><a class="reference internal" href="#id3"><code class="docutils literal notranslate"><span class="pre">ProphetEvaluator.plot_mapes()</span></code></a></li>
-<li><a class="reference internal" href="#id4"><code class="docutils literal notranslate"><span class="pre">ProphetEvaluator.plot_summary()</span></code></a></li>
-<li><a class="reference internal" href="#flair.prophet_evaluator.ProphetEvaluator.run"><code class="docutils literal notranslate"><span class="pre">ProphetEvaluator.run</span></code></a></li>
-<li><a class="reference internal" href="#flair.prophet_evaluator.ProphetEvaluator.sim_runs"><code class="docutils literal notranslate"><span class="pre">ProphetEvaluator.sim_runs</span></code></a></li>
-<li><a class="reference internal" href="#flair.prophet_evaluator.ProphetEvaluator.sim_value"><code class="docutils literal notranslate"><span class="pre">ProphetEvaluator.sim_value</span></code></a></li>
-<li><a class="reference internal" href="#flair.prophet_evaluator.ProphetEvaluator.target"><code class="docutils literal notranslate"><span class="pre">ProphetEvaluator.target</span></code></a></li>
-<li><a class="reference internal" href="#flair.prophet_evaluator.ProphetEvaluator.testtype"><code class="docutils literal notranslate"><span class="pre">ProphetEvaluator.testtype</span></code></a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#flair.prophet_evaluator.flair_logger"><code class="docutils literal notranslate"><span class="pre">flair_logger()</span></code></a></li>
-</ul>
-</li>
+<li><a class="reference internal" href="#flair">flair</a></li>
 <li><a class="reference internal" href="#indices-and-tables">Indices and tables</a></li>
 </ul>
 </div>
@@ -108,210 +83,36 @@
 <section id="installation">
 <h1>Installation<a class="headerlink" href="#installation" title="Link to this heading"></a></h1>
 <p># Installation</p>
-<p>To use <cite>flair</cite>, you can install it via <cite>pip</cite>. It is recommended to create a virtual environment before installing the package.</p>
+<p>To use <cite>behave-prophet</cite>, you can install it via <cite>pip</cite>. It is recommended to create a virtual environment before installing the package.</p>
 <p>## Prerequisites</p>
 <ul class="simple">
 <li><p>Python (&gt;=3.6)</p></li>
 <li><p>PostgreSQL</p></li>
 </ul>
 <p>## Installation</p>
-<p>You can install <cite>flair</cite> using <cite>pip</cite>:</p>
+<p>You can install <cite>behave-prophet</cite> using <cite>pip</cite>:</p>
 <p><code class="docutils literal notranslate"><span class="pre">`bash</span>
-<span class="pre">pip</span> <span class="pre">install</span> <span class="pre">flair</span>
+<span class="pre">pip</span> <span class="pre">install</span> <span class="pre">behave-prophet</span>
 <span class="pre">`</span></code></p>
 </section>
 <section id="quickstart-guide">
 <h1>Quickstart Guide<a class="headerlink" href="#quickstart-guide" title="Link to this heading"></a></h1>
 <p># Quickstart Guide</p>
-<p>Welcome to <cite>flair</cite>! This quickstart guide will help you get up and running with our package in no time.</p>
+<p>Welcome to <cite>behave-prophet</cite>! This quickstart guide will help you get up and running with our package in no time.</p>
 <p>## Installation</p>
-<p>To install <cite>flair</cite>, follow these simple steps:</p>
+<p>To install <cite>behave-prophet</cite>, follow these simple steps:</p>
 <ol class="arabic simple">
 <li><p>Ensure you have Python (&gt;=3.6) installed on your system.</p></li>
 <li><p>Setup a PostgreSQL database</p></li>
 <li><p>Open a terminal or command prompt.</p></li>
-<li><p>Install <cite>flair</cite> using <cite>pip</cite>:</p></li>
+<li><p>Install <cite>behave-prophet</cite> using <cite>pip</cite>:</p></li>
 </ol>
 <p><code class="docutils literal notranslate"><span class="pre">`bash</span>
-<span class="pre">pip</span> <span class="pre">install</span> <span class="pre">flair</span>
+<span class="pre">pip</span> <span class="pre">install</span> <span class="pre">behave-prophet</span>
 <span class="pre">`</span></code></p>
 </section>
-<section id="module-flair.prophet_evaluator">
-<span id="flair"></span><h1>flair<a class="headerlink" href="#module-flair.prophet_evaluator" title="Link to this heading"></a></h1>
-<dl class="py class">
-<dt class="sig sig-object py" id="flair.prophet_evaluator.ProphetEvaluator">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">flair.prophet_evaluator.</span></span><span class="sig-name descname"><span class="pre">ProphetEvaluator</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">df</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DataFrame</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">date</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">testtype</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sim_runs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">3</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sim_value</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">1.2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">outlier_injection</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">1.8</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">jobid</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'2023-11-28</span> <span class="pre">17:29:35'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">run</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#flair.prophet_evaluator.ProphetEvaluator" title="Link to this definition"></a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
-<p>A class to evaluate the behavior of a forecasting model in a simulated environment.</p>
-<p>…</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>df</strong> (<em>pd.DataFrame</em>) – The dataframe containing the timeseries.</p></li>
-<li><p><strong>target</strong> (<em>str</em>) – The name of the target column.</p></li>
-<li><p><strong>date</strong> (<em>str</em>) – The name of the date column.</p></li>
-<li><p><strong>testtype</strong> (<em>str</em>) – The type of the test. Currently only “structural” is supported.</p></li>
-<li><p><strong>sim_runs</strong> (<em>int</em>) – The number of simulations to run. Default is 10.</p></li>
-<li><p><strong>sim_value</strong> (<em>float</em>) – The value to multiply the target with in the simulation. Default is 1.2.</p></li>
-<li><p><strong>outlier_injection</strong> (<em>float</em>) – The value to multiply the target with in the simulation. Default is 1.8.</p></li>
-</ul>
-</dd>
-</dl>
-<dl class="py method">
-<dt class="sig sig-object py" id="flair.prophet_evaluator.ProphetEvaluator.evaluate">
-<span class="sig-name descname"><span class="pre">evaluate</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#flair.prophet_evaluator.ProphetEvaluator.evaluate" title="Link to this definition"></a></dt>
-<dd><p>Perform the simulation and forecast evaluation.</p>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="flair.prophet_evaluator.ProphetEvaluator.plot_interventions">
-<span class="sig-name descname"><span class="pre">plot_interventions</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#flair.prophet_evaluator.ProphetEvaluator.plot_interventions" title="Link to this definition"></a></dt>
-<dd><p>Visualize the randomly selected intervention points and the simulated timeseries.</p>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="flair.prophet_evaluator.ProphetEvaluator.plot_summary">
-<span class="sig-name descname"><span class="pre">plot_summary</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#flair.prophet_evaluator.ProphetEvaluator.plot_summary" title="Link to this definition"></a></dt>
-<dd><p>Provide a global report on the simulation results.</p>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="flair.prophet_evaluator.ProphetEvaluator.plot_detail">
-<span class="sig-name descname"><span class="pre">plot_detail</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#flair.prophet_evaluator.ProphetEvaluator.plot_detail" title="Link to this definition"></a></dt>
-<dd><p>Visualize the simulated timeseries &amp; forecasts for each evaluation step for a single run.</p>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="flair.prophet_evaluator.ProphetEvaluator.plot_mapes">
-<span class="sig-name descname"><span class="pre">plot_mapes</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#flair.prophet_evaluator.ProphetEvaluator.plot_mapes" title="Link to this definition"></a></dt>
-<dd><p>Visualize the mapes for each evaluation step for a single run.</p>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="flair.prophet_evaluator.ProphetEvaluator.date">
-<span class="sig-name descname"><span class="pre">date</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#flair.prophet_evaluator.ProphetEvaluator.date" title="Link to this definition"></a></dt>
-<dd></dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="flair.prophet_evaluator.ProphetEvaluator.df">
-<span class="sig-name descname"><span class="pre">df</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">DataFrame</span></em><a class="headerlink" href="#flair.prophet_evaluator.ProphetEvaluator.df" title="Link to this definition"></a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="id0">
-<span class="sig-name descname"><span class="pre">evaluate</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#id0" title="Link to this definition"></a></dt>
-<dd><p>Perform the simulation and forecast evaluation.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns<span class="colon">:</span></dt>
-<dd class="field-odd"><p>None</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="flair.prophet_evaluator.ProphetEvaluator.jobid">
-<span class="sig-name descname"><span class="pre">jobid</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'2023-11-28</span> <span class="pre">17:29:35'</span></em><a class="headerlink" href="#flair.prophet_evaluator.ProphetEvaluator.jobid" title="Link to this definition"></a></dt>
-<dd></dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="flair.prophet_evaluator.ProphetEvaluator.outlier_injection">
-<span class="sig-name descname"><span class="pre">outlier_injection</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">float</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1.8</span></em><a class="headerlink" href="#flair.prophet_evaluator.ProphetEvaluator.outlier_injection" title="Link to this definition"></a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="id1">
-<span class="sig-name descname"><span class="pre">plot_detail</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">run</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Figure</span></span></span><a class="headerlink" href="#id1" title="Link to this definition"></a></dt>
-<dd><p>Visualize the simulated timeseries &amp; forecasts for each evaluation step for a single run.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>run</strong> – int
-The run to visualize. Default is 0.</p>
-</dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p>go.Figure</p>
-</dd>
-<dt class="field-odd">Return type<span class="colon">:</span></dt>
-<dd class="field-odd"><p>fig</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="id2">
-<span class="sig-name descname"><span class="pre">plot_interventions</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Figure</span></span></span><a class="headerlink" href="#id2" title="Link to this definition"></a></dt>
-<dd><p>Visualize the randomly selected intervention points and the simulated timeseries.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns<span class="colon">:</span></dt>
-<dd class="field-odd"><p>go.Figure</p>
-</dd>
-<dt class="field-even">Return type<span class="colon">:</span></dt>
-<dd class="field-even"><p>fig</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="id3">
-<span class="sig-name descname"><span class="pre">plot_mapes</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">run</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Figure</span></span></span><a class="headerlink" href="#id3" title="Link to this definition"></a></dt>
-<dd><p>Visualize the mapes for each evaluation step for a single run.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>run</strong> – int
-The run to visualize. Default is 0.</p>
-</dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p>go.Figure</p>
-</dd>
-<dt class="field-odd">Return type<span class="colon">:</span></dt>
-<dd class="field-odd"><p>fig</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="id4">
-<span class="sig-name descname"><span class="pre">plot_summary</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#id4" title="Link to this definition"></a></dt>
-<dd><p>Provide a global report on the simulation results.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns<span class="colon">:</span></dt>
-<dd class="field-odd"><p>None</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="flair.prophet_evaluator.ProphetEvaluator.run">
-<span class="sig-name descname"><span class="pre">run</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#flair.prophet_evaluator.ProphetEvaluator.run" title="Link to this definition"></a></dt>
-<dd></dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="flair.prophet_evaluator.ProphetEvaluator.sim_runs">
-<span class="sig-name descname"><span class="pre">sim_runs</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">3</span></em><a class="headerlink" href="#flair.prophet_evaluator.ProphetEvaluator.sim_runs" title="Link to this definition"></a></dt>
-<dd></dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="flair.prophet_evaluator.ProphetEvaluator.sim_value">
-<span class="sig-name descname"><span class="pre">sim_value</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">float</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1.2</span></em><a class="headerlink" href="#flair.prophet_evaluator.ProphetEvaluator.sim_value" title="Link to this definition"></a></dt>
-<dd></dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="flair.prophet_evaluator.ProphetEvaluator.target">
-<span class="sig-name descname"><span class="pre">target</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#flair.prophet_evaluator.ProphetEvaluator.target" title="Link to this definition"></a></dt>
-<dd></dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="flair.prophet_evaluator.ProphetEvaluator.testtype">
-<span class="sig-name descname"><span class="pre">testtype</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#flair.prophet_evaluator.ProphetEvaluator.testtype" title="Link to this definition"></a></dt>
-<dd></dd></dl>
-
-</dd></dl>
-
-<dl class="py function">
-<dt class="sig sig-object py" id="flair.prophet_evaluator.flair_logger">
-<span class="sig-prename descclassname"><span class="pre">flair.prophet_evaluator.</span></span><span class="sig-name descname"><span class="pre">flair_logger</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#flair.prophet_evaluator.flair_logger" title="Link to this definition"></a></dt>
-<dd><p>Set up the package logger</p>
-</dd></dl>
-
+<section id="flair">
+<h1>flair<a class="headerlink" href="#flair" title="Link to this heading"></a></h1>
 </section>
 <section id="indices-and-tables">
 <h1>Indices and tables<a class="headerlink" href="#indices-and-tables" title="Link to this heading"></a></h1>
