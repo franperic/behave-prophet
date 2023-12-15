@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "flair"
+name = "behave-prophet"
 version = "0.1.0"
 description = ""
 authors = ["franperic <fran.peric@proton.me>"]
