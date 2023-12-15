@@ -8,7 +8,7 @@ import plotly.graph_objects as go
 import plotly.express as px
 from plotly.subplots import make_subplots
 
-from behave.colors import colors
+from behave_prophet.colors import colors
 
 import logging
 import cmdstanpy
