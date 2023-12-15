@@ -46,7 +46,7 @@ jobs:
           PGPASSWORD: postgres
           DATABASE_URL: postgresql://postgres:postgres@localhost:5432/behave
         run: |
-          psql -U postgres -h localhost -d flair -c "CREATE TABLE IF NOT EXISTS behave (
+          psql -U postgres -h localhost -d behave -c "CREATE TABLE IF NOT EXISTS behave (
             jobid TIMESTAMP NOT NULL,
             testtype VARCHAR(255) NOT NULL,
             run INT NOT NULL,
