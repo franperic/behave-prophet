@@ -6,7 +6,7 @@
 # -- Project information -----------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
 
-project = "flair"
+project = "behave-prophet"
 copyright = "2023, Fran Peric"
 author = "Fran Peric"
 
