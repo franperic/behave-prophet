@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "behave-prophet"
-version = "0.1.0"
+version = "0.1.1"
 description = ""
 authors = ["franperic <fran.peric@proton.me>"]
 readme = "README.md"
